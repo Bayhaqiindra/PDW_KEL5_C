@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orange Hotel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">
+        <h2 style="color: coral; font-size: 30px">Hotel Orange</h2>
+      </a>
+
+      <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#katalog">Catalog</a>
+        <a href="#fasilitas">Fasilitas</a>
+        <a href="#booking">Booking</a>
+      </nav>
+
+      <div class="icons">
+        <a href="/login.html" id="login-link">
+          <button id="login-btn">Login</button>
+        </a>
+        <div class="fas fa-search" id="search-btn"></div>
+      </div>
+
+      <style>
+        .icons {
+          display: flex;
+          align-items: center;
+        }
+
+        #login-btn {
+          order: -1; /* Pindahkan tombol Login ke urutan pertama */
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          font-weight: bold;
+          font-size: 20px;
+          border-radius: 8px;
+          padding: 8px;
+          background-color: orangered;
+          transition: background-color 0.2s ease;
+        }
+
+        #login-btn.clicked {
+          background-color: darkorange;
+        }
+      </style>
+
+      <script>
+        document.getElementById('login-btn').addEventListener('click', function () {
+          var button = this;
+          button.classList.add('clicked');
+
+          setTimeout(function () {
+            button.classList.remove('clicked');
+          }, 300); // Mengembalikan warna semula setelah 300ms
+        });
+      </script>
+
+      <div class="search-form">
+        <input type="search" id="search-box" placeholder="search here..." />
+        <label for="search-box" class="fas fa-search"></label>
+      </div>
+    </header>
+
+    <section class="home" id="home">
+      <div class="content">
+        <h3>Kenyamanan Modern, Layanan Terbaik</h3>
+        <p>Nikmati Kenyamanan dengan Pelayanan Terpilih dan Staf Profesional yang Menghasilkan Pengalaman Unik</p>
+        <a href="#booking" class="btn">Booking Disini</a>
+      </div>
+    </section>
+    <section class="about" id="about">
+      <h1 class="heading"><span>about</span> us</h1>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="video">
+            <video width="100%" height="auto" controls>
+              <source src="vidio/vidiohotel.MP4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="content">
+            <h3>Apa Yang Membuat Orange Hotel Spesial?</h3>
+            <p>Kami hanya memilih layanan terbaik dari hotel-hotel terkenal di dunia. Setiap detail dipilih dengan cermat untuk memastikan pengalaman yang sempurna.</p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="katalog" id="katalog">
+      <h1 class="heading">Jenis <span>Kamar</span></h1>
+
+      <div class="box-container">
+        <div class="box">
+          <img src="./images/download.jpeg" alt="" />
+          <h3>Suite</h3>
+          <a href="#" class="btn">Rp 750.000</a>
+        </div>
+
+        <div class="box">
+          <img src="images/pexels-pixabay-271624.jpg" alt="" />
+          <h3>Queen</h3>
+          <a href="#" class="btn">Rp 500.000</a>
+        </div>
+
+        <div class="box">
+          <img src="./images/pexels-heyho-6782567 - Copy.jpg" alt="" />
+          <h3>King</h3>
+          <a href="#" class="btn">Rp 650.000</a>
+        </div>
+
+        <div class="box">
+          <img src="./images/pexels-suhel-vba-1749662-3659681 - Copy.jpg" alt="" />
+          <h3>Superior</h3>
+          <a href="#" class="btn">Rp 450.000</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="fasilitas" id="fasilitas">
+      <h1 class="heading">Fasilitas <span>Hotel</span></h1>
+      <div class="container mt-4 mb-4 container-custom">
+        <div class="card-dark">
+          <img src="images/air_port_utility_16446.png" class="card-img-top bg-dark" alt="..." />
+          <div>
+            <h1 class="card-title text-center" style="color: whitesmoke">Free Wifi</h1>
+          </div>
+        </div>
+        <div class="card-dark">
+          <img src="./images/toasted-breads_121487.png" class="card-img-top bg-dark" alt="..." />
+          <div>
+            <h1 class="card-title text-center" style="color: whitesmoke">Breakfast</h1>
+          </div>
+        </div>
+        <div class="card-dark">
+          <img src="images/hotel-shower_icon-icons.com_48568.png" class="card-img-top bg-dark" alt="..." />
+          <div>
+            <h1 class="card-title text-center" style="color: whitesmoke">Water Heater</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking" class="container">
+      <h2 class="text-center">Booking</h2>
+      <form id="ticket-form" class="form-container">
+        <div class="form-group">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" required />
+        </div>
+        <div class="form-group">
+          <label for="quantity" class="form-label">Room Quantity</label>
+          <input type="number" class="form-control" id="quantity" min="1" max="10" required />
+        </div>
+        <div class="form-group">
+          <label for="concert" class="form-label">Type Room</label>
+          <select class="form-select" id="concert" required>
+            <option value="">Choose...</option>
+            <option value="Queen">Queen</option>
+            <option value="King">King</option>
+            <option value="Suite">Suite</option>
+            <option value="Superior">Superior</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" class="form-check-input" id="agree" required />
+          <label class="form-check-label" for="agree">I agree to the terms and conditions</label>
+        </div>
+        <button type="button" class="btn" onclick="submitForm()">Buy Room</button>
+      </form>
+    </section>
+
+    <section class="footer mb-5">
+      <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+        <a href="#" class="fab fa-pinterest"></a>
+      </div>
+      <div class="credit">Desain by Orange Hotel</div>
+    </section>
+
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>
